@@ -60,10 +60,10 @@ int main()
 void welcome()
 {
 	std::cout << "\nWelcome to the Coffee Spending Program!\n"
-		<< "Please choose one of the following:\n"
-		<< "1. Calculate coffee spending\n"
-		<< "2. Estimate yearly spending\n"
-		<< "3. Exit\n";
+	<< "Please choose one of the following:\n"
+	<< "1. Calculate coffee spending\n"
+	<< "2. Estimate yearly spending\n"
+	<< "3. Exit\n";
 }
 
 int getChoice()
@@ -80,8 +80,6 @@ int getChoice()
 	}
 
 	return choice;
-
-
 }
 
 double getCoffee()
@@ -89,37 +87,36 @@ double getCoffee()
 	int coffee = 0;
 	double avgCost = 0, weeklyCost = 0;
 
-		std::cout << "\nHow many coffees do you buy per week?: ";
+	std::cout << "\nHow many coffees do you buy per week?: ";
+	cin >> coffee;
+
+	while (coffee < 0)
+	{
+		std::cout << "\nPlease input a valid entry: ";
 		cin >> coffee;
-
-		while (coffee < 0)
-		{
-			std::cout << "\nPlease input a valid entry: ";
-			cin >> coffee;
-		}
+	}
 		
-		std::cout << "\nWhat is the average cost of your coffee?: $";
+	std::cout << "\nWhat is the average cost of your coffee?: $";
+	cin >> avgCost;
+		
+
+	while (avgCost < 0)
+	{
+		std::cout << "\nPlease input a valid entry: ";
 		cin >> avgCost;
-		
+	}
 
-		while (avgCost < 0)
-		{
-			std::cout << "\nPlease input a valid entry: ";
-			cin >> avgCost;
-		}
-
-		weeklyCost = coffee * avgCost;
+	weeklyCost = coffee * avgCost;
 		
-		return weeklyCost;
+	return weeklyCost;
 }
 
 void weeklySpending(double weeklyCoffee)
 {
-	std::cout << fixed << setprecision(2);
-	std::cout << "\nYour weekly spending: $"
-		<< weeklyCoffee << "\nYour monthly spending: $"
-		<< weeklyCoffee * 4 << "\n\n";
-
+	std::cout << fixed << setprecision(2)
+	<< "\nYour weekly spending: $"
+	<< weeklyCoffee << "\nYour monthly spending: $"
+	<< weeklyCoffee * 4 << "\n\n";
 }
 
 
@@ -128,7 +125,7 @@ double getDaily()
 	double dailyCost = 0;
 
 	std::cout << "\nHow much was your coffee today?: $";
-		cin >> dailyCost;
+	cin >> dailyCost;
 
 	while (dailyCost < 0)
 	{
@@ -141,10 +138,10 @@ double getDaily()
 
 void dailySpending(double dailyCoffee) 
 {
-	std::cout << fixed << setprecision(2);
-	std::cout << "\nYour daily coffee is $" << dailyCoffee
-		<< "\nthat is $" << dailyCoffee * 7 << " per week and $"
-		<< (dailyCoffee * 7) * 4 << " per month\n\n";
+	std::cout << fixed << setprecision(2)
+	<< "\nYour daily coffee is $" << dailyCoffee
+	<< "\nthat is $" << dailyCoffee * 7 << " per week and $"
+	<< (dailyCoffee * 7) * 4 << " per month\n\n";
 }
 
 double getMonthly()
@@ -156,8 +153,8 @@ double getMonthly()
 
 	while (monthlyCost < 0)
 	{
-	std::cout << "\nPlease input a valid entry: ";
-	cin >> monthlyCost;
+		std::cout << "\nPlease input a valid entry: ";
+		cin >> monthlyCost;
 	}
 
 	return monthlyCost;
@@ -165,22 +162,22 @@ double getMonthly()
 
 void annualSpending(double monthlyCoffee)
 {
-	std::cout << fixed << setprecision(2);
-	std::cout << "\nYour yearly estimated coffee spending is: $"
-		<< monthlyCoffee * 12 << "\nThat is roughly $"
-		<< monthlyCoffee / 4 << " per week at $"
-		<< (monthlyCoffee / 4) / 7 << " per day\n\n";
+	std::cout << fixed << setprecision(2)
+	<< "\nYour yearly estimated coffee spending is: $"
+	<< monthlyCoffee * 12 << "\nThat is roughly $"
+	<< monthlyCoffee / 4 << " per week at $"
+	<< (monthlyCoffee / 4) / 7 << " per day\n\n";
 }
 
 void goodbye()
 {
 	std::cout << "\nThank you so much for using this Coffee Spending Program!\n"
-		<< "\nTake care!";
+	<< "\nTake care!";
 }
 
 void submenu()
 {
 	std::cout << "\nPlease pick from the following options:"
-		<< "\n1. Calculate by week\n2. Calculate by day\n3. Back\n";
+	<< "\n1. Calculate by week\n2. Calculate by day\n3. Back\n";
 
 }
