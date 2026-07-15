@@ -81,14 +81,19 @@ was even or odd.
 that I needed to really get this concept down. I know that moving forward with
 arrays I will be utilizing this exact method to navigate them. 
  
-// Version:
-// Purpose:
-// Comment:
+// Version: 7.0_arrays
+// Purpose: Practice creating and navigating a basic array
+// Comment: This one was great to do again. I was relieved to know that I still knew
+how to initialize an array and set contents to it using a for loop.
 
-// Version:
-// Purpose:
-// Comment:
+// Version: 7.1_arrays  
+// Purpose: More practice creating and navigating an array
+// Comment: I essentially wanted to practice navigating arrays again but this time
+make it a little more organized with functions. 
 
-// Version:
-// Purpose:
-// Comment:
+// Version: 7.2_arrays
+// Purpose: Edit 7.1_arrays.cpp
+// Comment: I was told that I can not initialize count from a user input until I can
+learn vectors. So in the meantime I replaced count with a constant int SIZE. But the
+program is essentially the same, just iterations of how many scores are not influenced
+by reading user input.
