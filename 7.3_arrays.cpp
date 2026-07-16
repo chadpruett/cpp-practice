@@ -14,6 +14,7 @@ int main()
 	int highest = 0;
 
 	getScores(scores);
+	highest = getHighest(scores);
 	printScoresAndHighest(scores, highest);
 
 return 0;
@@ -21,9 +22,9 @@ return 0;
 
 void getScores(int scores[])
 {
-	for (int i = 0; i <= SIZE; i++)
+	for (int i = 0; i < SIZE; i++)
 	{
-		std::cout << "\nEnter Score " << i << ": ";
+		std::cout << "\nEnter Score " << i + 1 << ": ";
 		scores[i] = intVal();
 	}
 }
@@ -44,10 +45,9 @@ int intVal()
 
 int getHighest(int scores[])
 {
-	int i = 0;
-	int highest = scores[i];
+	int highest = scores[0];
 
-	for (int i = 1; i <= SIZE; i++)
+	for (int i = 1; i < SIZE; i++)
 	{
 		if (scores[i] > highest)
 		{	
@@ -61,7 +61,7 @@ void printScoresAndHighest(int scores[], int highest)
 {
 	std::cout << "\nScores:" << endl;
 	
-	for (int i = 0; i <= SIZE; i++)
+	for (int i = 0; i < SIZE; i++)
 	{
 		std::cout << scores[i] << '\n';
 	}
