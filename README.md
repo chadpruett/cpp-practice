@@ -97,3 +97,13 @@ make it a little more organized with functions.
 learn vectors. So in the meantime I replaced count with a constant int SIZE. But the
 program is essentially the same, just iterations of how many scores are not influenced
 by reading user input.
+
+// Version: 7.3_arrays
+// Purpose: Another practice of utilizing an array and finding the highest and lowest values
+// Comment: This practice was good. Helped me understand navigating an aray through a
+for loop. I was also able to use two reference parameters to update the highest and
+lowest values of the numbers added in the array
+
+// Version:
+// Purpose:
+// Comment:
