@@ -4,18 +4,19 @@ using namespace std;
 const int SIZE = 5;
 
 int intVal();
-int getHighest(int scores[]);
+void getHighLow(int scores[], int& highest, int& lowest);
 void getScores(int scores[]);
-void printScoresAndHighest(int scores[], int highest);
+void printScoresAndHighLow(int scores[], int highest, int lowest);
 
 int main()
 {
 	int scores[SIZE] = {0};
 	int highest = 0;
+	int lowest = 0;
 
 	getScores(scores);
-	highest = getHighest(scores);
-	printScoresAndHighest(scores, highest);
+	getHighLow(scores, highest, lowest);
+	printScoresAndHighLow(scores, highest, lowest);
 
 return 0;
 }
@@ -43,9 +44,10 @@ int intVal()
 	return value;
 }
 
-int getHighest(int scores[])
+void getHighLow(int scores[], int& highest, int& lowest)
 {
-	int highest = scores[0];
+	highest = scores[0];
+	lowest = scores[0];
 
 	for (int i = 1; i < SIZE; i++)
 	{
@@ -53,11 +55,14 @@ int getHighest(int scores[])
 		{	
 			highest = scores[i];
 		}
+		else if (scores[i] < lowest)
+		{
+			lowest = scores[i];
+		}
 	}
-	return highest;		
 }
 
-void printScoresAndHighest(int scores[], int highest)
+void printScoresAndHighLow(int scores[], int highest, int lowest)
 {
 	std::cout << "\nScores:" << endl;
 	
@@ -66,5 +71,6 @@ void printScoresAndHighest(int scores[], int highest)
 		std::cout << scores[i] << '\n';
 	}
 	
-	std::cout << "\nHighest Score: " << highest << endl;
+	std::cout << "\nHighest Score: " << highest
+	<< "\nLowest Score: " << lowest << endl;
 }
