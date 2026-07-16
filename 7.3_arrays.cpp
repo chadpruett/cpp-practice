@@ -45,8 +45,7 @@ int intVal()
 }
 
 void getHighLow(int scores[], int& highest, int& lowest)
-{
-	highest = scores[0];
+{ highest = scores[0];
 	lowest = scores[0];
 
 	for (int i = 1; i < SIZE; i++)

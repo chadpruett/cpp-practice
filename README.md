@@ -104,6 +104,37 @@ by reading user input.
 for loop. I was also able to use two reference parameters to update the highest and
 lowest values of the numbers added in the array
 
+// Version: 8.0_boolean
+// Purpose: Practice the basics of boolean values
+// Comment: Found myself genuinely confused at first. I am familiar with conditions
+when using if then statements but for some reason putting that into a value had
+me a little confused. I ended up completing the program and had it working but
+apparently I set it up in an "exploded" format. Some of the code I didn't need.
+I'm going to try and clean it up in the next practice.
+
+// Version: 8.1_boolean
+// Purpose: More practice on boolean values
+// Comment: This time around I was able to complete this in only 6 minutes. I understand now
+that I can call the bool function while initializing the bool being used in main. In that 
+very function, I don't need to have if then conditionals. I can simply return the called
+argument in a condition. If it comes back true then the variable being called and returned 
+is both true. Same thing applies if its false. I never knew that before so that was cool. The 
+next program I am going to make a more organized and elaborate code to practice this concept.
+
+// Version: 8.2_boolean
+// Purpose: Even more practice on boolean values
+// Comment: For this practice I combined almost most of what I know up to this point except
+for the arrays. I am going to be getting into boolean values with arrays on the next practice.
+But I wanted to practice using functions for each input, calculation, and output. I think I did
+pretty good on this one. I had a function of getting a number, a function for input validation,
+a function for calculating the bool, and a function for printing. All in 7 minutes, I felt good
+about this one, and being nice and neat.
+
+
 // Version:
 // Purpose:
-// Comment: My flow is incredible
+// Comment:
+
+// Version:
+// Purpose:
+// Comment:
