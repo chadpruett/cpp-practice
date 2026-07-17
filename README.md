@@ -138,3 +138,14 @@ about this one, and being nice and neat.
 // Version:
 // Purpose:
 // Comment:
+
+// Version: 9.0_boolean_arrays
+// Purpose: Practice naviaging arrays and setting bools
+// Comment: I felt very lost in this. I think mainly it was initializing the arrays and finding
+the bool (which I guess is the whole premise of this practice). I have no issues naviating an array
+at all. I'm going to learn from this and make the next one better.
+
+// Version 9.1_boolean_arrays
+// Purpose:
+// Comment:
+
