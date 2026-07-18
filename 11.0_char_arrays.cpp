@@ -4,10 +4,10 @@ using namespace std;
 const int SIZE = 20;
 
 void getName(char name[]);
-void printName(char name[]);
-void printLetters(char name[]);
-void getLength(char name[], int& length);
-void printBackwards(char name[], int length);
+void printName(const char name[]);
+void printLetters(const char name[]);
+int getLength(const char name[]);
+void printBackwards(const char name[], int length);
 
 int main()
 {
@@ -17,7 +17,7 @@ int main()
 	getName(name);
 	printName(name);
 	printLetters(name);
-	getLength(name, length);
+	length = getLength(name);
 	printBackwards(name, length);
 
 	return 0;
@@ -29,7 +29,7 @@ void getName(char name[])
 	
 	while (!(cin >> name))
 	{
-		std::cout << "\nPlease input a valild entry: ";
+		std::cout << "\nPlease input a valid entry: ";
 		cin.clear();
 		cin.ignore(10000,'\n');
 		std::cout << "\nEnter your first name: ";
@@ -37,12 +37,12 @@ void getName(char name[])
 }
 
 
-void printName(char name[])
+void printName(const char name[])
 {
 	std::cout << "\nYour name is: " << name << endl;
 }
 
-void printLetters(char name[])
+void printLetters(const char name[])
 {
 	for (int i = 0; name[i] != '\0'; i++)
 	{
@@ -50,18 +50,21 @@ void printLetters(char name[])
 	}
 }
 
-void getLength(char name[], int& length)
+int getLength(const char name[])
 {
+	int value = 0;
 
 	for (int i = 0; name[i] != '\0'; i++)
 	{
-		length++;
+		value++;
 	}
 
-	std::cout << "\n\nLength: " << length << "\n\n";
+	std::cout << "\n\nLength: " << value << "\n\n";
+	
+	return value;
 }
 
-void printBackwards(char name[], int length)
+void printBackwards(const char name[], int length)
 {
 	for (int i = length; i > 0; i--)
 	{
