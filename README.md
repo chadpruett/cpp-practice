@@ -1,4 +1,4 @@
-// Version: 1.0_functions
+// Version: 1.0_functions_and_loops_coffee_program
 // Purpose: Practice utilizing functions and loops.
 // Comment: I started with an assignment that was to practice functions
 and splitting different jobs into those functions. There was also nested
