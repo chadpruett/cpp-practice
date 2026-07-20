@@ -1,4 +1,4 @@
-// Version: 1.0_functions_and_loops_coffee_program
+// Version: 01.0_functions_and_loops_coffee_program
 // Purpose: Practice utilizing functions and loops.
 // Comment: I started with an assignment that was to practice functions
 and splitting different jobs into those functions. There was also nested
@@ -9,15 +9,14 @@ from. I also picked up that I could have a function that gathers user input
 and can return them so long as its the same function. Or even functions that
 can do a calculation and return the result from the function that was called.
 
-
-// Version: 2.0_function_arguments
+// Version: 02.0_function_single_argument_and_validation
 // Purpose: Practice function arguments, char data type, and input validation.
 // Comment: I wanted to remember how to use the char data type. I ended up
 relearning input validation for a specific data type to make input fullproof.
 Then I also experimented with <cctype> to make a users input lowercase using
 tolower().
 
-// Version: 3.0_function_arguments
+// Version: 03.0_function_two_arguments_and_validation
 // Purpose: Practice returning values utilizing two arguments in a function
 // Comment: I had some practice already utilizing one argument in a function
 to perform some logic and return a value. Before I got into arguments passed
