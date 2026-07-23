@@ -5,8 +5,8 @@ const int PEOPLE = 5;
 const int SIZE = 20;
 
 void getNames(char names[][SIZE]);
-int getLength(char names[]);
-void printSummary(char names[][SIZE]);
+int getLength(const char names[]);
+void printSummary(const char names[][SIZE]);
 
 
 int main()
@@ -28,7 +28,7 @@ void getNames(char names[][SIZE])
 	}
 }
 
-int getLength(char names[])
+int getLength(const char names[])
 {
 	int length = 0;
 
@@ -39,11 +39,13 @@ int getLength(char names[])
 	return length;
 }
 
-void printSummary(char names[][SIZE])
+void printSummary(const char names[][SIZE])
 {	
 	int length = 0;
-	int longestName = 0;
-	int shortestName = 0;
+	int longestIndex = 0;
+	int longestLength = getLength(names[0]);
+	int shortestIndex = 0;
+	int shortestLength = getLength(names[0]);
  	int totalLetters = 0;
 
 	for (int i = 0; i < PEOPLE; i++)
@@ -51,20 +53,22 @@ void printSummary(char names[][SIZE])
 		length = getLength(names[i]);
 		totalLetters += length; 
 				
-		if (length > longestName)
+		if (length > longestLength)
 		{
-			longestName = i;
+			longestLength = length;
+			longestIndex = i;
 		}		
-		else if (length < shortestName)
+		else if (length < shortestLength)
 		{
-			shortestName = i;
+			shortestLength = length;
+			shortestIndex = i;
 		}
 
 	}
-		std::cout << "\nLongest name: " << names[longestName]
-		<< "\nShortest name: " << names[shortestName]
+		std::cout << "\nLongest name: " << names[longestIndex]
+		<< "\nShortest name: " << names[shortestIndex]
 		<< "\nTotal letters: " << totalLetters
-		<< "\nAverage Length: " << totalLetters / PEOPLE << endl;
+		<< "\nAverage Length: " << static_cast<double>(totalLetters) / PEOPLE << endl;
 }
 
 
