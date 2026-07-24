@@ -9,11 +9,7 @@ void printResult(char userInput);
 
 int main()
 {
-	
-	char userInput;
-
-	std::cout << "\nEnter a character: ";
-	userInput = getCharacter();
+	char userInput = getCharacter();	
 	
 	printResult(userInput);
 
@@ -23,7 +19,8 @@ int main()
 char getCharacter()
 {
 	char userInput;
-	cin >> userInput;
+	std::cout << "\nEnter a character: ";
+	cin.get(userInput);
 	return userInput;
 }
 
@@ -49,7 +46,7 @@ void printResult(char userInput)
 	}
 	else if (ispunct(userInput))
 	{
-		std::cout << "\nthat is a punctuation.";
+		std::cout << "\nThat is a punctuation.";
 	}
 	else
 	{
