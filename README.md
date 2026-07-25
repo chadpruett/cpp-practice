@@ -221,3 +221,12 @@
             think in a final for class, I would be given around 2 hours to
             complete. I am excited to move forward and learn a new topic.
 
+
+// Version: 13.2_cctype_username_analyzer.cpp
+// Purpose: Practicing using bools to validate if a users password is valid.
+// Comment: This program initialized bools in main that will be called in
+            arguments to verify if a users password meets the requirements.
+            I kind of hate calling this many arguements in a function because
+            it just ends up looking so messy but this is all I know for now.
+            I can't wait to learn how to make it seem cleaner. Maybe there is
+            just a simpler logic.
