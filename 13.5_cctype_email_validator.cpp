@@ -15,7 +15,6 @@ void validateEmail(const char email[],
 		   bool& hasEightChars);
 void printResult(bool hasLetter, bool hasOneAt, bool hasDotAfterAt, bool hasNoSpaces, bool hasEightChars);
 
-
 int main()
 {
 	char email[SIZE];
@@ -28,7 +27,6 @@ int main()
 	getEmail(email);
 	validateEmail(email, hasLetter, hasOneAt, hasDotAfterAt, hasNoSpaces, hasEightChars);
 	printResult(hasLetter, hasOneAt, hasDotAfterAt, hasNoSpaces, hasEightChars);
-
 
 	return 0;
 }
