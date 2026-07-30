@@ -28,17 +28,15 @@ void getWord(char source[])
 
 void myStrCpy(char destination[], const char source[])
 {
-	int count = 0;
+	int j = 0;
 	
-	for (int j = 0; source[j] != '\0'; j++)
-	{
-		count++;
-	}
-	
-	for (int i = 0; i <= count; i++)
+	for (int i = 0; source[i] != '\0'; i++)
 	{
 		destination[i] = source[i];
+		j++;
 	}
+
+	destination[j] = '\0';
 
 }
 void printWords(const char source[], const char destination[])
