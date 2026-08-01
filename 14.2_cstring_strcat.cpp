@@ -30,26 +30,33 @@ void getWords(char destination[], char source[])
 void myStrCat(char destination[], const char source[])
 {
 	int i = 0;
-
-	for (i = 0; destination[i] != '\0'; i++)
+	while (destination[i] != '\0')
 	{
 		i++;
 	}
 
+	destination[i] = ' ';
+	i++;
+
 	for (int j = 0; source[j] != '\0'; j++)
 	{
 		destination[i] = source[j];
+		i++;
 	}
+	
+	destination[i] = '\0';
 }
 
 void printedWords(const char destination[])
 {
 	std::cout << "\nYour new word: ";
-
+	
 	for (int i = 0; destination[i] != '\0'; i++)
 	{
 		std::cout <<  destination[i];
 	}
+
+	std::cout << endl;
 }
 
 
