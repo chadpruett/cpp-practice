@@ -8,7 +8,6 @@ void getGuest(char guest[]);
 void writeGuest(const char guest[]);
 void readGuests();
 
-
 int main()
 {
 	char guest[MAX];
@@ -26,27 +25,39 @@ void getGuest(char guest[])
 	cin.getline(guest, MAX);	
 }
 
+
 void writeGuest(const char guest[])
 {
+	ofstream outFile;
+	outFile.open("guests.txt", ios::app);
+	
+	if (!outFile)
+	{
+		std::cout << "\nError";
+		return;
+	}
 
-	ofstream oFile;
-	oFile.open("guests.txt", ios::app);
-
-	oFile << guest;
-	oFile.close();
+	outFile << guest << '\n';
+	outFile.close();
 }
 
 void readGuests()
 {
 	char guest[MAX];
 
-	ifstream iFile;
-	iFile.open("guests.txt");
+	ifstream inFile;
+	inFile.open("guests.txt");
 
-	while (iFile.getline(guest, MAX))
+	if (!inFile)
+	{
+		std::cout << "\nError";
+		return;
+	}
+
+	while (inFile.getline(guest, MAX))
 	{
 		std::cout << "\nGuest: " << guest << endl;	
 	}
 
-	iFile.close();
+	inFile.close();
 }
