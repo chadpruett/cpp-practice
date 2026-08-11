@@ -5,13 +5,14 @@ using namespace std;
 const int MAX = 50;
 
 void welcome();
-void newDocument;
-void addToDocument;
-void readDocument;
-void delDocument;
+void newDocument();
+void addToDocument();
+void readDocument();
+//void delDocument();
 void goodbye();
 void writeLines(ofstream& outFile);
 bool foundDocument(char fileName[]);
+bool myStrCompare(const char first[], const char second[]);
 int intVal(int min, int max);
 
 int main()
@@ -37,7 +38,7 @@ int main()
 		}
 		else if (userOption == 4)
 		{
-			delDocument();
+//			delDocument();
 		}
 
 
@@ -63,12 +64,13 @@ void newDocument()
 	char docName[MAX];
 
 	std::cout << "\nEnter a document name: ";
+	cin.clear();
 	cin >> docName;
 	
 	ofstream outFile;
 	outFile.open(docName);
 
-	if (!docName)
+	if (!outFile)
 	{
 		std::cout << "\nError opening file!\n";
 		return;
@@ -94,11 +96,13 @@ void addToDocument()
 		ofstream outFile;
 		outFile.open(fileSearch, ios::app);
 
-		while (outFile.getline(line,MAX))
-		{
-			writeLines(outFile)
-		
-		}
+		writeLines(outFile);
+
+		outFile.close();
+	}
+	else
+	{
+		std::cout << "\nError finding file!\n";
 	}	
 
 }
@@ -119,13 +123,32 @@ bool foundDocument(char fileName[])
 
 void readDocument()
 {
+	char fileSearch[MAX];
 	char line[MAX];
-	
-	while (inFile.getline(line, MAX))
-	{
-		std::cout << line << endl;
-	}
+	bool isFile = false;
 
+	std::cout << "\nWhich file do you want to read?: ";
+	cin.clear();
+	cin >> fileSearch;
+
+	isFile = foundDocument(fileSearch);
+
+	if (isFile)
+	{
+		ifstream inFile;
+		inFile.open(fileSearch);
+
+		while (inFile.getline(line, MAX))
+		{
+			std::cout << line << endl;
+		}
+
+		inFile.close();
+	}
+	else
+	{
+		std::cout << "\nError opening file!\n";
+	}
 
 }
 
@@ -142,4 +165,46 @@ int intVal(int min, int max)
 	}
 	
 	return value;
+}
+
+void writeLines(ofstream& outFile)
+{
+	char line[MAX];
+
+	std::cout << "\nBegin writing. Enter /save to finish.\n";
+	cin.ignore(10000,'\n');
+
+	while (true)
+	{
+		cin.getline(line, MAX);
+	
+		if (myStrCompare(line, "/save"))
+		{
+			break;
+		}
+		
+		outFile << line << '\n';
+	}
+}
+
+bool myStrCompare(const char first[], const char second[])
+{
+	int i = 0;
+
+	while (first[i] != '\0' && second[i] != '\0')
+	{
+		if (first[i] != second[i])
+		{
+			return false;
+		}
+	
+		i++;
+	}
+
+	return first[i] == '\0' && second[i] == '\0';
+}
+
+void goodbye()
+{
+	std::cout << "\n\nGoodbye from Outer Space!\n\n";
 }
