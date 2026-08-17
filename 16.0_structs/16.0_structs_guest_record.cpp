@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
 
-const int MAX = 50;
+const int MAX = 40;
 
 struct Guest
 {
@@ -15,6 +15,7 @@ void printGuest(const Guest& guest);
 
 int main()
 {
+
 	Guest guest;
 
 	getGuest(guest);
@@ -23,20 +24,21 @@ int main()
 	return 0;
 }
 
-
 void getGuest(Guest& guest)
 {
 	std::cout << "\nGuest name: ";
 	cin >> guest.name;
-	std::cout << "\nRoom Number: ";
+	std::cout << "\nRoom number: ";
 	cin >> guest.room;
-	std::cout << "\nHow many nights?: ";
+	std::cout << "\nNights: ";
 	cin >> guest.nights;
+
 }
 
 void printGuest(const Guest& guest)
 {
-	std::cout << "\n\n" << guest.name << " is staying in room "
-	<< guest.room << " for " << guest.nights << " nights." << endl;
+
+	std::cout << '\n' << guest.name << " is staying in room "
+	<< guest.room << " for " << guest.nights << " nights. " << endl; 
 }
 
