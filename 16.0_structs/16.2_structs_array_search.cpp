@@ -13,7 +13,7 @@ struct Guests
 
 void getGuests(Guests guest[]);
 void searchGuest(const Guests guest[]);
-void printGuest(const Guests guest[], int index);
+void printGuest(const Guests& guest);
 
 int main()
 {
@@ -41,7 +41,6 @@ void getGuests(Guests guest[])
 void searchGuest(const Guests guest[])
 {
 	int searchRoom = 0;
-	int index = 0;
 	bool foundGuest = false;
 
 	std::cout << "\nWhich room number are you looking for?: ";
@@ -52,26 +51,20 @@ void searchGuest(const Guests guest[])
 
 		if (searchRoom == guest[i].room)
 		{	
-			index = i;
+			printGuest(guest[i]);
 			foundGuest = true;
 		}
 	}
 
-	if (foundGuest)
-	{
-		printGuest(guest, index);
-	}
-	else if (!foundGuest)
+	if (!foundGuest)
 	{
 		std::cout << "\nNo one is staying in that room.. yet.\n";
 	}
 }
 
-void printGuest(const Guests guest[], int index)
+void printGuest(const Guests& guest)
 {
-	
-
-	std::cout << "\nGuest: " << guest[index].name
-	<< " is staying in room " << guest[index].room
-	<< " for " << guest[index].nights << " nights.\n";
+	std::cout << "\nGuest: " << guest.name
+	<< " is staying in room " << guest.room
+	<< " for " << guest.nights << " nights.\n";
 }
