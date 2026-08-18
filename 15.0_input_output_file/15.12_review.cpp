@@ -65,7 +65,7 @@ void addLog()
 	roomNumber = intVal(1, 500);
 	cin.ignore(10000,'\n');
 	std::cout << "\nMessage: ";
-	cin >> line;
+	cin.getline(line, MAX);
 	
 	outFile << author << '\n'
 		<< roomNumber << '\n'
@@ -89,7 +89,7 @@ void readLogs()
 		return;
 	}
 
-	while (inFile >> author >> roomNumber >> line)
+	while (inFile >> author >> roomNumber)
 	{
 		inFile.ignore(10000,'\n');
 		inFile.getline(line, MAX);
