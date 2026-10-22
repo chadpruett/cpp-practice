@@ -22,8 +22,23 @@ int main()
 	{
 		*stats[i] -= 10;
 	}
-	
+
 	//print after loop
+	
+	std::cout << '\n' << health << '\n'
+	<< armor << '\n'
+	<< energy << '\n';
+	
+	//loop that adds 10 to only values below 80.
+	for (int i = 0; i < 3; i++)
+	{	
+		if (*stats[i] < 80)
+		{
+			*stats[i] += 10;
+		}
+	}
+		
+	//print after second loop
 	std::cout << '\n' << health << '\n'
 	<< armor << '\n'
 	<< energy << '\n';
