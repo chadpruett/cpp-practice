@@ -26,7 +26,6 @@ int main()
 	std::cout << '\n' << health << '\n'
 	<< armor << '\n'
 	<< energy << '\n';
-	
 
 	return 0;
 }
