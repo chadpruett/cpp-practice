@@ -20,10 +20,13 @@ int main()
 	stats[1] = stats[0];
 	*stats[1] = 60;
 	
+	//make stats[1] point back to armor
+	stats[1] = &armor;
+
 	std::cout << '\n' << health << '\n'
 	<< armor << '\n'
 	<< energy << '\n';
-
+	
 
 	return 0;
 }
